@@ -2,7 +2,7 @@
 
 💎 **Nombre del Producto**
 
-![logo](https://github.com/No-Country-simulation/s16-19-ft-data-bi/blob/ab01a38306393bf5cca0cc0f1cbe948061b6c364/DH.png)
+![logo](https://github.com/No-Country-simulation/s16-19-ft-data-bi/blob/bf4bb2563273080a8798ecab892a77b0c960606b/DH.png)
 
 📊 **Rubro**
 
