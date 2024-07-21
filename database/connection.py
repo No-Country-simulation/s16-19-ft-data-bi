@@ -1,6 +1,7 @@
 import os
 import psycopg2
 from psycopg2 import OperationalError
+
 import streamlit as st
 from dotenv import load_dotenv
 
@@ -9,6 +10,7 @@ def is_streamlit():
         return st._is_running_with_streamlit
     except:
         return False
+
 
 class DatabaseConnection:
     def __init__(self):
@@ -63,6 +65,7 @@ class DatabaseConnection:
             self.handle_error("No connection to the database.")
             return None, None
 
+
     def close_connection(self):
         if self.cursor:
             self.cursor.close()
@@ -77,3 +80,15 @@ class DatabaseConnection:
 
 if __name__ == "__main__":
     db = DatabaseConnection()
+
+    if db.connection:
+        query = "SELECT * FROM food LIMIT 10"
+        results = db.fetch_data(query)
+
+        if results:
+            for row in results:
+                print(row)
+
+        db.close_connection()
+    else:
+        print("No connection to the database.")
