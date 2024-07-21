@@ -6,3 +6,4 @@ openai
 Pillow
 matplotlib
 python-dotenv
+optuna
