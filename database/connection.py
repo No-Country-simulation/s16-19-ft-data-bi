@@ -1,8 +1,9 @@
 import os
 import psycopg2
-from psycopg2 import sql, OperationalError
+from psycopg2 import OperationalError
 from dotenv import load_dotenv
 
+# Load environment variables from .env file
 load_dotenv()
 
 class DatabaseConnection:
@@ -23,11 +24,15 @@ class DatabaseConnection:
             self.cursor = None
 
     def fetch_data(self, query):
-        try:
-            self.cursor.execute(query)
-            return self.cursor.fetchall()
-        except Exception as e:
-            print(f"Error executing query: {e}")
+        if self.connection and self.cursor:
+            try:
+                self.cursor.execute(query)
+                return self.cursor.fetchall()
+            except Exception as e:
+                print(f"Error executing query: {e}")
+                return None
+        else:
+            print("No connection to the database.")
             return None
 
     def close_connection(self):
@@ -38,3 +43,15 @@ class DatabaseConnection:
 
 if __name__ == "__main__":
     db = DatabaseConnection()
+
+    if db.connection:
+        query = "SELECT * FROM food LIMIT 10"
+        results = db.fetch_data(query)
+
+        if results:
+            for row in results:
+                print(row)
+
+        db.close_connection()
+    else:
+        print("No connection to the database.")
