@@ -2,7 +2,7 @@ streamlit
 pandas
 torch
 scikit-learn
-openai
+openai>=1.0.0
 Pillow
 matplotlib
 python-dotenv
