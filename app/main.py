@@ -2,7 +2,7 @@ import streamlit as st
 from app.forms import user_form
 from app.recommendations import generate_plan
 from model.train_model import train_model
-from model.train_model import train_final_model
+import torch
 
 def main():
     st.title("Sistema de Recomendación Nutricional para Personas con Diabetes")
