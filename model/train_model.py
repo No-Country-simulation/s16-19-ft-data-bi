@@ -24,19 +24,25 @@ class NutritionalModel(nn.Module):
         x = self.fc2(x)
         return x
 
-data = [torch.tensor([1.0] * 10) for _ in range(100)]  # Ejemplo de datos
-dataset = FoodDataset(data)
-dataloader = DataLoader(dataset, batch_size=10, shuffle=True)
+def train_model(data, epochs=10, lr=0.001):
+    dataset = FoodDataset(data)
+    dataloader = DataLoader(dataset, batch_size=10, shuffle=True)
 
-model = NutritionalModel()
-criterion = nn.MSELoss()
-optimizer = optim.Adam(model.parameters(), lr=0.001)
+    model = NutritionalModel()
+    criterion = nn.MSELoss()
+    optimizer = optim.Adam(model.parameters(), lr=lr)
 
-for epoch in range(10):
-    for inputs in dataloader:
-        optimizer.zero_grad()
-        outputs = model(inputs.float())
-        loss = criterion(outputs, torch.tensor([0.0] * 10))
-        loss.backward()
-        optimizer.step()
-    print(f"Epoch {epoch+1}, Loss: {loss.item()}")
+    for epoch in range(epochs):
+        for inputs in dataloader:
+            optimizer.zero_grad()
+            outputs = model(inputs.float())
+            loss = criterion(outputs, torch.zeros(outputs.size()))
+            loss.backward()
+            optimizer.step()
+        print(f"Epoch {epoch+1}, Loss: {loss.item()}")
+
+    return model
+
+if __name__ == "__main__":
+    data = [torch.tensor([1.0] * 10) for _ in range(100)]  # Ejemplo de datos
+    trained_model = train_model(data)
