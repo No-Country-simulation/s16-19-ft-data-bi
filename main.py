@@ -83,11 +83,11 @@ input_prompt_image = """
 Como experto especializado en evaluar la idoneidad de frutas y alimentos para personas con diabetes, tu tarea implica analizar imágenes de alimentos. Tu primer objetivo es identificar el tipo de fruta o alimento presente en la imagen. Posteriormente, debes determinar el índice glucémico del artículo identificado. Basándote en este índice glucémico, proporciona recomendaciones sobre si las personas con diabetes pueden incluir el alimento detectado en su dieta. Si se considera adecuado, especifica la cantidad recomendada para el consumo. POR FAVOR CONTESTA EN ESPAÑOL.
 """
 
-st.sidebar.header("🛠️Secciones")
+st.sidebar.header("️🍏 Secciones")
 options = ["Información Nutricional", "Recomendaciones de Dieta", "Estadísticas"]
 selection = st.sidebar.radio("Seleccionar Opción", options)
 
-st.title("🛠️Sistema de Recomendación de Dietas para Diabéticos")
+st.title("️🍏 Sistema de Recomendación Nutricional para Personas con Diabetes")
 
 if selection == "Información Nutricional":
     st.subheader("Información Nutricional")
@@ -110,7 +110,7 @@ if selection == "Información Nutricional":
 
 elif selection == "Recomendaciones de Dieta":
     st.subheader("Recomendaciones de Dieta")
-    st.header("🔧 Personalizar Recomendaciones")
+    st.header("️🍏 Personalizar Recomendaciones")
 
     col1, col2 = st.columns(2)
 

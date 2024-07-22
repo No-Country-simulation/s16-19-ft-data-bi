@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 tempDir
-.streamlit
+.streamlit/secrets.toml
 # C extensions
 *.so
 
