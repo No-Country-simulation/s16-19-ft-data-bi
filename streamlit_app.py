@@ -17,5 +17,5 @@ if __name__ == "__main__":
     main()
 
 # Añadir opción para guardar o imprimir la recomendación
-st.button("Exportar a PDF")
-st.button("Imprimir")
+st.button("📄 Exportar a PDF")
+st.button("🖨️ Imprimir")
