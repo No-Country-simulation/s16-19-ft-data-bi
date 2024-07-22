@@ -5,6 +5,19 @@ from model.train_model import train_final_model
 import torch
 from fpdf import FPDF
 
+def app_logic():
+    st.title("🍏 Sistema de Recomendación Nutricional para Personas con Diabetes")
+    user_data = user_form()
+    
+    if st.button("🍽️ Generar Plan Nutricional"):
+        plan = generate_plan(user_data)
+        st.write(plan)
+
+    if st.button("🤖 Entrenar Modelo"):
+        data = [torch.tensor([1.0] * 10) for _ in range(100)]  # Ejemplo de datos
+        model = train_final_model(data)
+        st.write("Modelo entrenado con Éxito")
+
 def generate_pdf(plan):
     pdf = FPDF()
     pdf.add_page()
@@ -22,25 +35,6 @@ def generate_pdf(plan):
     pdf_file_path = "/tmp/plan_nutricional.pdf"
     pdf.output(pdf_file_path)
     return pdf_file_path
-
-def main():
-    st.title("Sistema de Recomendación Nutricional para Personas con Diabetes")
-    user_data = user_form()
-    
-    if st.button("Generar Plan Nutricional"):
-        plan = generate_plan(user_data)
-        st.write(plan)
-        
-        pdf_file_path = generate_pdf(plan)
-        
-        with open(pdf_file_path, "rb") as pdf_file:
-            pdf_bytes = pdf_file.read()
-            st.download_button(label="Descargar PDF", data=pdf_bytes, file_name="plan_nutricional.pdf", mime='application/octet-stream')
-
-    if st.button("Entrenar Modelo"):
-        data = [torch.tensor([1.0] * 10) for _ in range(100)]  # Ejemplo de datos
-        model = train_final_model(data)
-        st.write("Modelo entrenado con éxito")
 
 if __name__ == "__main__":
     main()
