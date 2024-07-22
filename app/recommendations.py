@@ -1,18 +1,25 @@
-from app.database import DatabaseConnection
 import openai
 import os
+from dotenv import load_dotenv
 
-# Configurar la API Key de OpenAI
-openai.api_key = os.getenv('OPENAI_API_KEY')
+# Cargar las variables de entorno desde el archivo .env
+load_dotenv()
+
+# Configurar la clave de API de OpenAI
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def generate_plan(user_data):
-    # Generar el prompt para la API de OpenAI basado en los datos del usuario
-    prompt = f"Genera un plan nutricional detallado para una persona con diabetes. Datos del usuario: {user_data}."
-    
-    response = openai.Completion.create(
-        engine="text-davinci-003",
-        prompt=prompt,
-        max_tokens=150
+    prompt = f"Genera un plan nutricional detallado para una persona con diabetes basado en los siguientes datos: {user_data}"
+
+    # Usar la nueva API de OpenAI
+    response = openai.ChatCompletion.create(
+        model="gpt-4",
+        messages=[
+            {"role": "system", "content": "Eres un nutricionista experto en planes nutricionales para personas con diabetes."},
+            {"role": "user", "content": prompt}
+        ],
+        max_tokens=1000,
+        temperature=0.7,
     )
-    
-    return response.choices[0].text.strip()
+
+    return response['choices'][0]['message']['content'].strip()
