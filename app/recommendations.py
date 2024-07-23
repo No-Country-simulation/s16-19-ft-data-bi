@@ -51,6 +51,9 @@ def generate_gemini_response(input_prompt, nutritional_info):
             return response.text
         else:
             return "No se pudo generar una respuesta adecuada."
+    except IndexError as e:
+        st.error(f"IndexError generating response: {e}")
+        return "Error de índice al generar la respuesta."
     except Exception as e:
         st.error(f"Error generating response: {e}")
         return "Error generando la respuesta."
