@@ -10,8 +10,8 @@ def user_form():
     estacion = st.selectbox("Estación del Año?", ["Verano", "Otoño", "Primavera", "Invierno"])
     nivel_actividad = st.selectbox("Nivel de Actividad Física", ["Bajo", "Moderado", "Intenso"])
     horas_sueno = st.number_input("Horas de Sueño Promedio por Día", min_value=0, max_value=24, step=1)
-    inicio_act = st.time_input("Hora de Despertarse", time(6, 0))  # Valor predeterminado 6:00 AM
-    fin_act = st.time_input("Hora de Dormirse", time(23, 0))  # Valor predeterminado 11:00 PM
+    inicio_act = st.time_input("Hora de Despertarse Usualmente", time(6, 0))  # Valor predeterminado 6:00 AM
+    fin_act = st.time_input("Hora de Dormirse Usualmente", time(23, 0))  # Valor predeterminado 11:00 PM
     patologia = st.multiselect("Patología Subyacente", ["Enfermedad Cardiovascular", "Hipertensión", "Dislipemia", "Gastroparesia", "Hígado Graso"])
     tipo_diabetes = st.selectbox("Tipo de Diabetes", ["Tipo I", "Tipo II"])
     preferencia_dietetica = st.text_input("Preferencia Dietética")
