@@ -15,62 +15,53 @@ Completar...
 🍏 **Implementación**
 
 El Sistema de Recomendación Nutricional para Pacientes Diabéticos desarrollado utiliza una combinación de datasets personalizados que son extraídos previamente de una base de datos en PostgresSQL, donde mediante un proceso de ETL, se extrajo lo más útil y significativo además de que se hizo una estructuración de los mismos.
-Luego, se integra la API de OpenAI, técnicas avanzadas de optimización de hiperparámetros, y un modelo de lenguaje grande (LLM) para proporcionar planes nutricionales personalizados. En resumen, se plantea una integración híbrida. 
+Luego, se integra la API de Gemini a un modelo de machine learning entrenado con el framework de Pytorch, combinando rocesamiento de lenguaje natural (NLP) y un modelo de lenguaje grande (LLM) para proporcionar planes nutricionales personalizados. En resumen, se plantea una integración híbrida. 
 Los componentes y el flujo del sistema son:
 
-**1. Datasets como Base de Datos**
+**1. Base de Datos**
 
 - Bases de Datos Iniciales: En PostgresSQL, se recopila y almacenan los datos iniciales relacionados a parámetros, marcadores e indicadores de pacientes diabéticos, así como también de alimentos, proteínas, entre otros.
   
 - Preprocesamiento: Los datos se cargan y se preprocesan para eliminar valores nulos y normalizar las características, asegurando así que el modelo de machine learning recibe datos de calidad.
   
-- Carga de Datos: Se utilizan múltiples archivos CSV (dataset1.csv, dataset2.csv, dataset3.csv, dataset4.csv) que contienen información relevante para la creación de planes nutricionales.
-
 **2. Modelo de Machine Learning con PyTorch**
 
 - Definición del Modelo: Se define una red neuronal simple utilizando PyTorch. El modelo consta de una capa de entrada, una capa oculta y una capa de salida.
   
-- Entrenamiento: El modelo se entrena con los datos preprocesados para aprender a generar recomendaciones nutricionales basadas en las características del usuario.
+- Entrenamiento: El modelo se entrena con los datos preprocesados para aprender a generar recomendaciones nutricionales basadas en las características del usuario. El usuario ingresa información pertinente en la APP, que se plantea como un formulario.
   
-- Optimización de Hiperparámetros con Optuna: Optuna se utiliza para encontrar los mejores hiperparámetros del modelo (por ejemplo, tamaño de la capa oculta, tasa de aprendizaje, número de épocas) mediante una serie de pruebas y optimización bayesiana.
+- Optimización con Adam: Adam ajusta la tasa de aprendizaje de cada parámetro individualmente utilizando promedios móviles de gradientes y sus cuadrados. Corrige el sesgo hacia cero en las primeras etapas del entrenamiento. Es eficiente en memoria y cómputo, adecuado para modelos con muchos parámetros y datos.
 
-**3. Integración con la API de OpenAI y Uso de LLM**
+**3. Integración con la API de Gemini**
 
-- Generación de Planes Nutricionales: Se utiliza un modelo de lenguaje grande (LLM) proporcionado por OpenAI para enriquecer las recomendaciones generadas por el modelo de machine learning. A través de prompts específicos, el LLM genera un plan nutricional detallado que incluye porciones de alimentos y consideraciones dietéticas, en general.
+- Generación de Planes Nutricionales: Se utiliza un modelo de lenguaje grande (LLM) proporcionado por Gemini para enriquecer las recomendaciones generadas por el modelo de machine learning. A través de prompts específicos, el LLM genera un plan nutricional detallado que incluye porciones de alimentos y consideraciones dietéticas, en general.
   
-- Generación de Texto Natural: OpenAI puede generar planes nutricionales detallados y personalizados en lenguaje natural, mejorando la comprensión y la utilidad de las recomendaciones para el usuario final.
+- Generación de Texto Natural: Gemini puede generar planes nutricionales detallados y personalizados en lenguaje natural, mejorando la comprensión y la utilidad de las recomendaciones para el usuario final.
   
-- Personalización: La información ingresada por el usuario (peso, altura, horas de sueño, nivel de actividad, estación del año, preferencias dietéticas, comorbilidades, y tipo de diabetes) se utiliza para personalizar las recomendaciones generadas por el LLM. La API puede manejar aspectos contextuales y preferencias específicas del usuario que no están completamente cubiertas por los datos estructurados.
+- Personalización: La información ingresada por el usuario (edad, género, peso, altura, país, estación del año, nivel de actividad física, horas promedio de sueño, hora de despertarse y dormirse usualmente, patologías subyacentes, tipo de diabetes, preferencia y restricción dietética) se utiliza para personalizar las recomendaciones generadas por el LLM. La API puede manejar aspectos contextuales y preferencias específicas del usuario que no están completamente cubiertas por los datos estructurados.
   
 **4. Interfaz de Usuario con Streamlit**
 
 - Recopilación de Datos del Usuario: Se utiliza Streamlit para crear una interfaz de usuario interactiva donde los usuarios pueden ingresar sus datos personales y preferencias.
   
-- Visualización de Resultados: Los planes nutricionales generados se muestran directamente en la aplicación y se proporciona la opción de guardarlos como PDF o imprimirlos.
-  
-- Visualización y Usabilidad: Imágenes de fondo y logos personalizados se integran en la aplicación para mejorar la experiencia del usuario.
+- Visualización de Resultados: Los planes nutricionales generados se muestran directamente en la aplicación y se proporciona la opción de guardarlos como PDF.
 
 **5. Manejo de Características Categóricas**
 
 - Codificación de Características: Las características categóricas como nivel de actividad, estación del año, y tipo de diabetes se codifican numéricamente para ser utilizadas por el modelo de machine learning.
 
-**6. Funcionalidades Adicionales**
-
-- Traducción de Condiciones Médicas: Las comorbilidades ingresadas en español se traducen al inglés para ser procesadas correctamente por la API de OpenAI.
-- Formateo de Recomendaciones: Las recomendaciones generadas se formatean para presentarlas de manera clara y legible al usuario.
-
 📉 **Flujo del Sistema**
 
 - Carga de Datos: Los datasets se cargan y preprocesan.
 - Entrenamiento del Modelo: El modelo se entrena utilizando los datos preprocesados.
-- Optimización: Se optimizan los hiperparámetros del modelo con Optuna.
+- Optimización: Se optimizan los hiperparámetros del modelo con Adam.
 - Ingreso de Datos del Usuario: El usuario ingresa sus datos a través de la interfaz de Streamlit.
-- Generación de Recomendaciones: El modelo de machine learning genera una recomendación inicial que se enriquece mediante el LLM de la API de OpenAI.
-- Visualización: El plan nutricional personalizado se muestra al usuario y se ofrecen opciones para guardar o imprimir.
+- Generación de Recomendaciones: El modelo de machine learning genera una recomendación inicial que se enriquece mediante el LLM de la API de Gemini.
+- Visualización: El plan nutricional personalizado se muestra al usuario y se ofrecen opciones para guardar.
 
 🦾 **Propuesta de Valor**
 
-- Complementariedad de Fuentes: El uso combinado de datasets estructurados y la API de OpenAI permite aprovechar lo mejor de ambos mundos, por un lado la precisión de los modelos entrenados en datos específicos y la flexibilidad y comprensión contextual de los modelos de lenguaje grande.
+- Complementariedad de Fuentes: El uso combinado de datasets estructurados y la API de Gemini permite aprovechar lo mejor de ambos mundos, por un lado la precisión de los modelos entrenados en datos específicos y la flexibilidad y comprensión contextual de los modelos de lenguaje grande.
 
 - Streamlit facilita la creación de interfaces interactivas y amigables para el usuario, lo que mejora la experiencia del usuario final y facilita la adopción del sistema.
 
