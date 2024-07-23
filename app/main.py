@@ -9,29 +9,19 @@ def app_logic():
     st.title("🍏 Sistema de Recomendación Nutricional para Personas con Diabetes")
     user_data = user_form()
 
+    plan = None  # Inicializar la variable plan
+
     if st.button("🍽️ Generar Plan Nutricional"):
-        # Generar plan nutricional inicial
+        # Generar plan nutricional
         try:
             plan = get_nutrition_recommendations(user_data)
             st.write("### Plan Nutricional Orientativo")
             st.write(plan)
-            
-            # Enriquecer el plan nutricional si es necesario
-            enriched_plan = plan  # Si hay una función específica para enriquecer, se puede usar aquí
-            st.write("### Plan Nutricional Plus")
-            st.write(enriched_plan)
-
-            # Generar PDF y proporcionar botón de descarga
-            pdf_file_path = generate_pdf(enriched_plan)
-            with open(pdf_file_path, "rb") as pdf_file:
-                pdf_bytes = pdf_file.read()
-                st.download_button(label="Descargar PDF", data=pdf_bytes, file_name="plan_nutricional.pdf", mime='application/octet-stream')
-        
         except Exception as e:
             st.error(f"Error al generar el plan nutricional: {e}")
 
-    # Añadir opción para guardar
-    if st.button("📄 Exportar a PDF"):
+    # Añadir opción para guardar o imprimir la recomendación
+    if plan and st.button("📄 Exportar a PDF"):
         pdf_file_path = generate_pdf(plan)
         with open(pdf_file_path, "rb") as pdf_file:
             pdf_bytes = pdf_file.read()
