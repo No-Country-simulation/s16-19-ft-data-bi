@@ -60,4 +60,3 @@ if __name__ == "__main__":
 
     # Iniciar la lógica de la aplicación
     app_logic()
-
