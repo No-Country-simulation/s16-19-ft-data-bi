@@ -30,7 +30,7 @@ def app_logic():
         except Exception as e:
             st.error(f"Error al generar el plan nutricional: {e}")
 
-    # Añadir opción para guardar o imprimir la recomendación
+    # Añadir opción para guardar
     if st.button("📄 Exportar a PDF"):
         pdf_file_path = generate_pdf(plan)
         with open(pdf_file_path, "rb") as pdf_file:
