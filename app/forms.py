@@ -9,6 +9,7 @@ def user_form():
     nivel_actividad = st.selectbox("Nivel de Actividad Física", ["Bajo", "Moderado", "Intenso"])
     horas_sueno = st.number_input("Horas de Sueño Promedio por Día", min_value=0, max_value=24, step=1)
     patologia = st.multiselect("Patología Subyacente", ["Enfermedad Cardiovascular", "Hipertensión", "Dislipemia", "Gastroparesia", "Hígado Graso"])
+    tipo_diabetes = st.selectbox("Tipo de Diabetes", ["Tipo I", "Tipo II"])
     preferencia_dietetica = st.text_input("Preferencia Dietética")
     restriccion_dietetica = st.text_input("Restricción Dietética")
 
@@ -21,6 +22,7 @@ def user_form():
         "nivel_actividad": nivel_actividad,
         "horas_sueno": horas_sueno,
         "patologia": patologia,
+        "tipo_diabetes": tipo_diabetes,
         "preferencia_dietetica": preferencia_dietetica,
         "restriccion_dietetica": restriccion_dietetica
     }
