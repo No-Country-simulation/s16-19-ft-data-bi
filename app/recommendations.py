@@ -59,6 +59,18 @@ def generate_gemini_response(input_prompt, nutritional_info):
         return "Error generando la respuesta."
 
 def get_nutrition_recommendations(user_data):
-    input_prompt = "Genera un plan nutricional detallado para una persona con diabetes como si fueras un nutricionista experto, basado en los siguientes datos: "
+    input_prompt = (
+        "Generar un plan nutricional detallado para una persona con diabetes. "
+        "Considerar edad, género, peso y altura para empezar."
+        "Personalizarlo adecuadamente para estación del año y país, en cuestión de elección de alimentos."
+        "Enfocarse en nivel de actividad física, para aconcejar acertivamente un plan de actividad física semanal."
+        "Considerar hora de sueño promedio por día, horarios de despertar y dormir, debido a que el plan nutricional debería seguir estos parámetros para definir el desayuno, la media mañana, el almuerzo, la media tarde, merienda y cena a lo largo de las horas activas."
+        "Aconcejar sobre ordenar las horas de sueño, si las horas de sueño promedio por día, exceden las 8 horas."
+        "Encuadrar el plan nutricional, considerando además las patologías subyacentes además de las de diabetes."
+        "Enfocar en tipo de diabetes, 1 o 2 para mejorar la recomendación nutricional."
+        "Las preferencias y restricciones dietéticas, deben analizarse según sean compatibles o no con una persona que padece diabetes más patologías subyacentes."
+        "Importante que aquello no compatible con la diabetes y patología subyacente, se aconceje reemplazar por otro alimento."
+        
+    )
     recommendations = generate_gemini_response(input_prompt, user_data)
     return recommendations
