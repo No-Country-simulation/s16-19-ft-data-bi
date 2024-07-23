@@ -1,37 +1,61 @@
-import openai
-import os
-from dotenv import load_dotenv
+import google.generativeai as genai
+import toml
+import streamlit as st
 
-# Cargar las variables de entorno desde el archivo .env
-load_dotenv()
+# Cargar las variables de configuración desde el archivo config.toml
+config = toml.load('config.toml')
 
-# Configurar la clave de API de OpenAI
-openai.api_key = os.getenv("OPENAI_API_KEY")
+# Configurar la clave de API de Gemini
+GEMINI_API_KEY = config['gemini']['api_key']
+if GEMINI_API_KEY is None:
+    raise Exception("API key for Gemini not found. Make sure it's set in the config.toml file.")
 
-def generate_plan(user_data, model="gpt-4"):
-    prompt = f"Genera un plan nutricional detallado para una persona con diabetes basado en los siguientes datos: {user_data}"
+genai.configure(api_key=GEMINI_API_KEY)
 
-    response = openai.ChatCompletion.create(
-        model=model,
-        messages=[
-            {"role": "system", "content": "Eres un nutricionista experto en planes nutricionales para personas con diabetes."},
-            {"role": "user", "content": prompt}
-        ],
-        max_tokens=1000,
-        temperature=0.7,
-    )
+generation_config = {
+    "temperature": 0.4,
+    "top_p": 1,
+    "top_k": 32,
+    "max_output_tokens": 4096,
+}
 
-    return response['choices'][0]['message']['content'].strip()
+safety_settings = [
+    {
+        "category": "HARM_CATEGORY_HARASSMENT",
+        "threshold": "BLOCK_MEDIUM_AND_ABOVE"
+    },
+    {
+        "category": "HARM_CATEGORY_HATE_SPEECH",
+        "threshold": "BLOCK_MEDIUM_AND_ABOVE"
+    },
+    {
+        "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+        "threshold": "BLOCK_MEDIUM_AND_ABOVE"
+    },
+    {
+        "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+        "threshold": "BLOCK_MEDIUM_AND_ABOVE"
+    }
+]
 
-def test_gpt35():
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[
-            {"role": "user", "content": "Say this is a test"}
-        ],
-        max_tokens=50,
-        temperature=0.7,
-    )
+model = genai.GenerativeModel(
+    model_name="gemini-1.5-flash-latest",
+    generation_config=generation_config,
+    safety_settings=safety_settings
+)
 
-    return response['choices'][0]['message']['content'].strip()
+def generate_gemini_response(input_prompt, nutritional_info):
+    try:
+        response = model.generate_content([input_prompt + str(nutritional_info)])
+        if response and hasattr(response, 'text'):
+            return response.text
+        else:
+            return "No se pudo generar una respuesta adecuada."
+    except Exception as e:
+        st.error(f"Error generating response: {e}")
+        return "Error generando la respuesta."
 
+def get_nutrition_recommendations(user_data):
+    input_prompt = "Genera un plan nutricional detallado para una persona con diabetes como si fueras un nutricionista experto, basado en los siguientes datos: "
+    recommendations = generate_gemini_response(input_prompt, user_data)
+    return recommendations
