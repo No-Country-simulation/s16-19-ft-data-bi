@@ -1,6 +1,6 @@
 import streamlit as st
 from app.forms import user_form
-from app.recommendations import generate_plan
+from app.recommendations import generate_plan, enrich_plan
 from model.train_model import train_final_model
 import torch
 from fpdf import FPDF
@@ -8,13 +8,20 @@ from fpdf import FPDF
 def app_logic():
     st.title("🍏 Sistema de Recomendación Nutricional para Personas con Diabetes")
     user_data = user_form()
-    
+
     if st.button("🍽️ Generar Plan Nutricional"):
+        # Generar plan nutricional inicial
         plan = generate_plan(user_data)
+        st.write("### Plan Nutricional Orientativo")
         st.write(plan)
         
+        # Enriquecer el plan nutricional
+        enriched_plan = enrich_plan(plan)
+        st.write("### Plan Nutricional Plus")
+        st.write(enriched_plan)
+
         # Generar PDF y proporcionar botón de descarga
-        pdf_file_path = generate_pdf(plan)
+        pdf_file_path = generate_pdf(enriched_plan)
         with open(pdf_file_path, "rb") as pdf_file:
             pdf_bytes = pdf_file.read()
             st.download_button(label="Descargar PDF", data=pdf_bytes, file_name="plan_nutricional.pdf", mime='application/octet-stream')
@@ -44,4 +51,3 @@ def generate_pdf(plan):
 
 if __name__ == "__main__":
     app_logic()
-
