@@ -1,12 +1,8 @@
 import google.generativeai as genai
-import toml
 import streamlit as st
 
-# Cargar las variables de configuración desde el archivo config.toml
-config = toml.load('config.toml')
+GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
 
-# Configurar la clave de API de Gemini
-GEMINI_API_KEY = config['gemini']['api_key']
 if GEMINI_API_KEY is None:
     raise Exception("API key for Gemini not found. Make sure it's set in the config.toml file.")
 
@@ -70,7 +66,7 @@ def get_nutrition_recommendations(user_data):
         "Enfocar en tipo de diabetes, 1 o 2 para mejorar la recomendación nutricional."
         "Las preferencias y restricciones dietéticas, deben analizarse según sean compatibles o no con una persona que padece diabetes más patologías subyacentes."
         "Importante que aquello no compatible con la diabetes y patología subyacente, se aconceje reemplazar por otro alimento."
-        
+
     )
     recommendations = generate_gemini_response(input_prompt, user_data)
     return recommendations

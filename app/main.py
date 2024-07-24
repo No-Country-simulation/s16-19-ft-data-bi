@@ -6,7 +6,6 @@ from app.forms import user_form
 from app.recommendations import get_nutrition_recommendations
 
 def app_logic():
-    st.title("🍏 Sistema de Recomendación Nutricional para Personas con Diabetes")
     user_data = user_form()
 
     plan = None  # Inicializar la variable plan
