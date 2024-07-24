@@ -1,11 +1,14 @@
 import streamlit as st
-from fpdf import FPDF
+import tempfile
 import torch
+import os
 from model.train_model import train_final_model
 from app.forms import user_form
 from app.recommendations import get_nutrition_recommendations
+from fpdf import FPDF
 
 def app_logic():
+    st.title("🍏 Sistema de Recomendación Nutricional para Personas con Diabetes")
     user_data = user_form()
 
     plan = None  # Inicializar la variable plan
@@ -20,11 +23,10 @@ def app_logic():
             st.error(f"Error al generar el plan nutricional: {e}")
 
     # Añadir opción para guardar o imprimir la recomendación
-    if plan and st.button("📄 Exportar a PDF"):
-        pdf_file_path = generate_pdf(plan)
-        with open(pdf_file_path, "rb") as pdf_file:
-            pdf_bytes = pdf_file.read()
-            st.download_button(label="Descargar PDF", data=pdf_bytes, file_name="plan_nutricional.pdf", mime='application/octet-stream')
+    if plan:
+        st.write("📄 Haz click en ⋮ para Imprimir y en Destino: Guardar como PDF")
+        # Generar PDF sin la opción de descargar directamente
+        generate_pdf(plan)
 
 def generate_pdf(plan):
     pdf = FPDF()
@@ -33,7 +35,7 @@ def generate_pdf(plan):
 
     pdf.cell(200, 10, txt="Plan Nutricional para Personas con Diabetes", ln=True, align='C')
     pdf.ln(10)
-    
+
     if isinstance(plan, dict):
         for meal, details in plan.items():
             pdf.cell(200, 10, txt=f"{meal}:", ln=True, align='L')
@@ -45,9 +47,12 @@ def generate_pdf(plan):
             pdf.ln(5)
     else:
         pdf.multi_cell(0, 10, plan)
-    
-    pdf_file_path = "/tmp/plan_nutricional.pdf"
+
+    temp_dir = tempfile.gettempdir()
+    pdf_file_path = os.path.join(temp_dir, "plan_nutricional.pdf")
     pdf.output(pdf_file_path)
+
+    # Devolver la ruta del archivo PDF
     return pdf_file_path
 
 if __name__ == "__main__":
