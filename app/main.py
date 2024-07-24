@@ -8,7 +8,6 @@ from app.recommendations import get_nutrition_recommendations
 from fpdf import FPDF
 
 def app_logic():
-    st.title("🍏 Sistema de Recomendación Nutricional para Personas con Diabetes")
     user_data = user_form()
 
     plan = None  # Inicializar la variable plan
