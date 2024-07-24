@@ -3,7 +3,7 @@ import os
 import toml
 
 # Cargar las variables de configuración desde el archivo config.toml
-config = toml.load('config.toml')
+config = toml.load('secrets.toml')
 
 # Agregar el directorio principal del proyecto a sys.path
 current_path = os.path.dirname(os.path.abspath(__file__))
