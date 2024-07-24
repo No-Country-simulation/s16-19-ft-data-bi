@@ -7,7 +7,8 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
 )
-
+logo_path = "assets/DH.png"
+st.sidebar.image(logo_path, width=150)
 st.sidebar.header("️🍏 Secciones")
 options = ["Información Nutricional", "Recomendaciones de Dieta", "Estadísticas"]
 selection = st.sidebar.radio("Seleccionar Opción", options)
