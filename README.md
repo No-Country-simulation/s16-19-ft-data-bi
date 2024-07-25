@@ -96,6 +96,6 @@ El Sistema de Recomendación Nutricional desarrollado utiliza una combinación d
 
 🔗 **Enlaces Relevantes**
 
-- [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)](diabeat-healthcare.streamlit.app)
+- [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://diabeat-healthcare.streamlit.app)
 - [![Trello](https://img.shields.io/badge/Trello-0079BF?logo=trello&logoColor=white)](https://trello.com/b/nGylF9YE/s16-19-databi)
 - completar...
