@@ -10,7 +10,7 @@ st.set_page_config(
 logo_path = "assets/DH.png"
 st.sidebar.image(logo_path, width=150)
 st.sidebar.header("️SECCIONES")
-options = ["Visualizaciones y Análisis", "Búsqueda de Información Nutricional", "Recomendación de Plan Nutricional"]
+options = ["📈 Visualizaciones y Análisis", "🔍 Búsqueda de Información Nutricional", "🍽️ Recomendación de Plan Nutricional"]
 selection = st.sidebar.radio("Seleccionar Opción", options)
 
 st.title("️🍏 Sistema de Recomendación Nutricional para Personas con Diabetes")
