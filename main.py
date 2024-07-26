@@ -18,7 +18,7 @@ st.title("️🍏 Sistema de Recomendación Nutricional para Personas con Diabet
 if selection == "Búsqueda de Información Nutricional":
     st.subheader("Búsqueda de Información Nutricional")
     search_type = st.selectbox("Seleccione el tipo de búsqueda",
-                               ["Código de Barras", "Nombre del pRoducto", "Imagen del Producto"])
+                               ["Código de Barras", "Nombre del Producto", "Imagen del Producto"])
 
     if search_type in ["Código de Barras", "Nombre del Producto"]:
         input_text = st.text_input(f"Ingrese el {search_type.lower()}")
