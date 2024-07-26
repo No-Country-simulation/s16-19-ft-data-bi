@@ -15,8 +15,8 @@ selection = st.sidebar.radio("Seleccionar Opción", options)
 
 st.title("️🍏 Sistema de Recomendación Nutricional para Personas con Diabetes")
 
-if selection == "📈 Visualizaciones y Análisis"":
-    st.subheader("📈 Visualizaciones y Análisis"")
+if selection == "📈 Visualizaciones y Análisis":
+    st.subheader("📈 Visualizaciones y Análisis")
 
 elif selection == "🔍 Búsqueda de Información Nutricional":
     st.subheader("🔍 Búsqueda de Información Nutricional")
