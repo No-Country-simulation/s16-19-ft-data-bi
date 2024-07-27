@@ -98,7 +98,7 @@ El Sistema de Recomendación Nutricional desarrollado utiliza una combinación d
 📉 **Flujo del Sistema**
 
 - Carga de Datos: La base de datos se preprocesa.
-- Entrenamiento del Modelo: El modelo se entrena utilizando los datos preprocesados.
+- Entrenamiento del Modelo: El modelo se entrena utilizando PyTorch con los datos preprocesados.
 - Optimización: Se optimizan los hiperparámetros del modelo con Adam.
 - Ingreso de Datos del Usuario: El usuario ingresa sus datos a través de la interfaz de Streamlit.
 - Generación de Recomendaciones: El modelo de machine learning genera una recomendación inicial que se enriquece mediante el LLM de la API de Gemini.
