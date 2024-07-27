@@ -17,7 +17,8 @@ Utilizando Python, Pandas y diversas bibliotecas de visualización de datos, exp
 Este análisis exploratorio proporcionará las bases necesarias para el desarrollo de un modelo de machine learning que pueda generar búsquedas y recomendaciones de planes nutricionales personalizadas para pacientes diabéticos, considerando sus características individuales y necesidades específicas. El objetivo final es mejorar la calidad de vida de los pacientes con diabetes mediante una orientación nutricional óptima y personalizada.
 
 1. **Foco Principal**
-El objetivo principal de este análisis es explorar y comprender la información contenida en la base de datos "international_diabetes_federation" para identificar patrones, relaciones y tendencias relevantes para el desarrollo de un sistema de recomendación nutricional personalizado para pacientes diabéticos. Queremos descubrir cómo las características de los alimentos (contenido nutricional, índice glucémico, etc.) se relacionan con las necesidades y condiciones de salud de los pacientes, para así generar recomendaciones dietéticas precisas y efectivas.
+   
+   - El objetivo principal de este análisis es explorar y comprender la información contenida en la base de datos "international_diabetes_federation" para identificar patrones, relaciones y tendencias relevantes para el desarrollo de un sistema de recomendación nutricional personalizado para pacientes diabéticos. Queremos descubrir cómo las características de los alimentos (contenido nutricional, índice glucémico, etc.) se relacionan con las necesidades y condiciones de salud de los pacientes, para así generar recomendaciones dietéticas precisas y efectivas.
 
 2. **Fases del Análisis**
    
@@ -29,9 +30,9 @@ El objetivo principal de este análisis es explorar y comprender la información
 
 - Fase 2: Análisis Exploratorio de Datos (EDA)
 
-Análisis univariado: Describimos la distribución de las variables clave mediante histogramas, gráficos de barras y medidas de resumen.
-Análisis bivariado: Exploramos las relaciones entre variables utilizando gráficos de dispersión, tablas de contingencia y pruebas de correlación.
-Identificación de patrones y tendencias: Destacamos hallazgos interesantes o relevantes para el proyecto.
+   - Análisis univariado: Describimos la distribución de las variables clave mediante histogramas, gráficos de barras y medidas de resumen.
+   - Análisis bivariado: Exploramos las relaciones entre variables utilizando gráficos de dispersión, tablas de contingencia y pruebas de correlación.
+   - Identificación de patrones y tendencias: Destacamos hallazgos interesantes o relevantes para el proyecto.
 
 - Fase 3: Preparación de Datos para Modelado
 
