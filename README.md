@@ -8,11 +8,55 @@
 
 Orientado a Healthtech. Sistema de Recomendación Nutricional para Pacientes Diabéticos.
 
-🍏 **Análisis**
+🍏 **Visualizaciones y Análisis**
 
-Completar...
+Este proyecto inicia teniendo primero múltiples Bases de Datos en PostgreSQL, y de allí se revisa una por una teniendo como objetivo realizar un análisis exploratorio de datos (EDA) para extraer datasets claves con información sobre pacientes diabéticos (incluyendo parámetros, marcadores e indicadores) y otro con datos detallados sobre alimentos y sus propiedades nutricionales. A través de este análisis, buscamos comprender la relación entre las características de los pacientes y sus necesidades nutricionales, así como identificar patrones y tendencias en los datos que puedan ser útiles para el desarrollo de un sistema de recomendación nutricional personalizado.
 
-🍏 **Implementación**
+Utilizando Python, Pandas y diversas bibliotecas de visualización de datos, exploraremos la distribución de las variables, identificaremos valores atípicos y datos faltantes, y analizaremos las correlaciones entre diferentes características. Además, realizaremos un análisis descriptivo de los datos para obtener una visión general de las características de los pacientes y los alimentos incluidos en el estudio.
+
+Este análisis exploratorio proporcionará las bases necesarias para el desarrollo de un modelo de machine learning que pueda generar búsquedas y recomendaciones de planes nutricionales personalizadas para pacientes diabéticos, considerando sus características individuales y necesidades específicas. El objetivo final es mejorar la calidad de vida de los pacientes con diabetes mediante una orientación nutricional óptima y personalizada.
+
+1. **Foco Principal**
+El objetivo principal de este análisis es explorar y comprender la información contenida en la base de datos "international_diabetes_federation" para identificar patrones, relaciones y tendencias relevantes para el desarrollo de un sistema de recomendación nutricional personalizado para pacientes diabéticos. Queremos descubrir cómo las características de los alimentos (contenido nutricional, índice glucémico, etc.) se relacionan con las necesidades y condiciones de salud de los pacientes, para así generar recomendaciones dietéticas precisas y efectivas.
+
+2. **Fases del Análisis**
+   
+- Fase 1: Comprensión de los Datos
+
+  - Recopilación y carga de datos: Detallamos cómo se accedió a los datos, ya sea desde PostgresSQL, archivos CSV, entre otros.
+  - Inspección inicial: Describimos las primeras observaciones sobre los datos, incluyendo sus dimensiones y tipos de variables.
+  - Limpieza y preprocesamiento: Enumeramos las tareas realizadas para preparar los datos, como el manejo de valores nulos, duplicados y outliers.
+
+- Fase 2: Análisis Exploratorio de Datos (EDA)
+
+Análisis univariado: Describimos la distribución de las variables clave mediante histogramas, gráficos de barras y medidas de resumen.
+Análisis bivariado: Exploramos las relaciones entre variables utilizando gráficos de dispersión, tablas de contingencia y pruebas de correlación.
+Identificación de patrones y tendencias: Destacamos hallazgos interesantes o relevantes para el proyecto.
+
+- Fase 3: Preparación de Datos para Modelado
+
+  - Selección de características: Explicamos qué variables se utilizarán para entrenar el modelo y justificamos nuestra elección.
+  - Ingeniería de características: Detallamos las transformaciones realizadas y la creación de nuevas variables.
+  - División de datos: Describimos cómo se dividieron los datos en conjuntos de entrenamiento y prueba.
+
+- Fase 4: Modelado y Evaluación
+
+  - Selección del modelo: Mencionamos el tipo de modelo planeado (regresión, clasificación, etc.) y justificamos la elección.
+  - Entrenamiento del modelo: Describimos el proceso de entrenamiento del modelo y las métricas utilizadas para evaluar su rendimiento.
+  - Optimización del modelo: Explicamos cómo se realizará la optimización de los hiperparámetros, si es aplicable.
+  - Evaluación final: Presentamos los resultados del modelo en el conjunto de prueba y discutimos su desempeño.
+
+- Fase 5: Conclusiones y Recomendaciones
+
+  - Resumen de hallazgos clave: Destacamos los resultados más importantes del análisis.
+  - Implicaciones para el sistema de recomendación: Explicamos cómo los hallazgos informarán el desarrollo del sistema de recomendación.
+  - Próximos pasos: Sugerimos posibles direcciones futuras para el análisis o el desarrollo del sistema.
+
+3. **Visualizaciones**
+
+   Completar...
+
+🍏 **Implementación de Búsqueda y Recomendación**
 
 El Sistema de Recomendación Nutricional desarrollado utiliza una combinación de una base de datos que hicimos en PostgresSQL, donde mediante un proceso de ETL, se extrajo lo más útil y significativo, haciendo una estructuración de los mismos. Luego, se integra la API de Gemini como un modelo de lenguaje grande (LLM) para enriquecer las búsquedas de productos comerciales y planes nutricionales personalizados a la vez que se el usuario completa con datos requeridos por la plataforma, por medio de la técnica de procesamiento de lenguaje natural (NLP). En resumen, se plantea una integración híbrida. Los componentes y el flujo del sistema son:
 
