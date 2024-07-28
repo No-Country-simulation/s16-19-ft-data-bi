@@ -8,6 +8,11 @@
 
 Orientado a Healthtech. Sistema de Recomendación Nutricional para Pacientes Diabéticos.
 
+🔗 **Enlaces Relevantes**
+
+- APP: [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://diabeat-healthcare.streamlit.app)
+- MVP: [![Trello](https://img.shields.io/badge/Trello-0079BF?logo=trello&logoColor=white)](https://trello.com/b/nGylF9YE/s16-19-databi)
+
 🍏 **Visualizaciones y Análisis**
 
 Este proyecto inicia teniendo primero múltiples Bases de Datos en PostgreSQL, y de allí se revisa una por una teniendo como objetivo realizar un análisis exploratorio de datos (EDA) para extraer datasets claves con información sobre pacientes diabéticos (incluyendo parámetros, marcadores e indicadores) y otro con datos detallados sobre alimentos y sus propiedades nutricionales. A través de este análisis, buscamos comprender la relación entre las características de los pacientes y sus necesidades nutricionales, así como identificar patrones y tendencias en los datos que puedan ser útiles para el desarrollo de un sistema de recomendación nutricional personalizado.
@@ -139,8 +144,3 @@ El Sistema de Recomendación Nutricional desarrollado utiliza una combinación d
 - Andrés Felipe Corzo Angarita - Data Scientist **>>** [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/andres-felipe-corzo-angarita/) [![GitHub](https://img.shields.io/badge/GitHub-100000?logo=github&logoColor=white)](https://github.com/AndresFCA/)
 
 - Delicia Fedele Boria - Machine Learning **>>** [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/deliciafedeleboria/) [![GitHub](https://img.shields.io/badge/GitHub-100000?logo=github&logoColor=white)](https://github.com/defedeleboria/)
-
-🔗 **Enlaces Relevantes**
-
-- APP: [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://diabeat-healthcare.streamlit.app)
-- MVP: [![Trello](https://img.shields.io/badge/Trello-0079BF?logo=trello&logoColor=white)](https://trello.com/b/nGylF9YE/s16-19-databi)
