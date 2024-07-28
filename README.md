@@ -116,7 +116,7 @@ El Sistema de Recomendación Nutricional desarrollado utiliza una combinación d
 - Lenguaje de Programación: ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![SQL](https://img.shields.io/badge/SQL-4479A1?logo=sql&logoColor=white)
 - Base de Datos: ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql&logoColor=white)
 - Nube: ![Rackspace](https://img.shields.io/badge/Rackspace-000000?logo=rackspace&logoColor=white)
-- IDE: ![Amazon SageMaker](https://img.shields.io/badge/Amazon_SageMaker-232F3E?logo=amazon&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/Visual_Studio_Code-007ACC?logo=visual-studio-code&logoColor=white)
+- IDE: ![Amazon SageMaker](https://img.shields.io/badge/Amazon_SageMaker-232F3E?logo=amazon&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/Visual_Studio_Code-007ACC?logo=visual-studio-code&logoColor=white) ![Google Colab](https://img.shields.io/badge/Google_Colab-F9AB00?logo=google-colab&logoColor=white)
 - Visualización de datos: ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?logo=power-bi&logoColor=white)
 - Creación de aplicación web interactiva: ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)
 - Gestión del Código Fuente y Desarrollo Colaborativo: ![GitHub](https://img.shields.io/badge/GitHub-100000?logo=github&logoColor=white)
