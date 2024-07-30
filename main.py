@@ -1,5 +1,6 @@
 import streamlit as st
 from nutritional_info.services.get_nutritional_info import get_nutritional_info
+import streamlit.components.v1 as components
 from app.main import app_logic
 
 st.set_page_config(
@@ -18,6 +19,21 @@ st.title("️🍏 Sistema de Recomendación Nutricional para Personas con Diabet
 if selection == "📈 Visualizaciones y Análisis":
     st.subheader("📈 Visualizaciones y Análisis")
 
+    # URLs de los reportes de Power BI publicados
+    powerbi_urls = [
+        "https://app.powerbi.com/view?r=eyJrIjoiY2M1YjYzODAtMjBjOC00OTE0LWI4NDAtMzYwYTQyY2FlODlhIiwidCI6ImZhZTJmNWI5LTY3MTEtNGYyYy1iYWUzLTI2ZGIzM2M2M2QzZCIsImMiOjR9",
+        "https://app.powerbi.com/view?r=eyJrIjoiY2ZlZWM3OTYtZDU3OC00ZGFmLTk4OGMtODQ0MWVkZDc0NmVkIiwidCI6ImI4OGNjNWQyLWMxMjctNDc1My1iZDJiLWFlZWZiNDU2N2FkMiIsImMiOjR9"
+    ]
+
+    for url in powerbi_urls:
+        st.markdown(f"### Reporte de Power BI")
+        components.html(
+            f"""
+            <iframe width="800" height="600" src="{url}" frameborder="0" allowFullScreen="true"></iframe>
+            """,
+            height=600,
+        )
+        st.markdown("---")
 elif selection == "🔍 Búsqueda de Información Nutricional":
     st.subheader("🔍 Búsqueda de Información Nutricional")
     search_type = st.selectbox("Seleccione el tipo de búsqueda",
