@@ -19,14 +19,18 @@ st.title("️🍏 Sistema de Recomendación Nutricional para Personas con Diabet
 if selection == "📈 Visualizaciones y Análisis":
     st.subheader("📈 Visualizaciones y Análisis")
 
-    # URLs de los reportes de Power BI publicados
     powerbi_urls = [
         "https://app.powerbi.com/view?r=eyJrIjoiY2M1YjYzODAtMjBjOC00OTE0LWI4NDAtMzYwYTQyY2FlODlhIiwidCI6ImZhZTJmNWI5LTY3MTEtNGYyYy1iYWUzLTI2ZGIzM2M2M2QzZCIsImMiOjR9",
         "https://app.powerbi.com/view?r=eyJrIjoiY2ZlZWM3OTYtZDU3OC00ZGFmLTk4OGMtODQ0MWVkZDc0NmVkIiwidCI6ImI4OGNjNWQyLWMxMjctNDc1My1iZDJiLWFlZWZiNDU2N2FkMiIsImMiOjR9"
     ]
 
-    for url in powerbi_urls:
-        st.markdown(f"### Reporte de Power BI")
+    titles = [
+        "Análisis en Power BI: Diabetes a Nivel Mundial y Data Informativa de Salud Dinámica",
+        "Análisis en Power BI: Indicadores Glucémicos y Nutricionales de Alimentos"
+    ]
+
+    for title, url in zip(titles, powerbi_urls):
+        st.markdown(f"### {title}")
         components.html(
             f"""
             <iframe width="800" height="600" src="{url}" frameborder="0" allowFullScreen="true"></iframe>
