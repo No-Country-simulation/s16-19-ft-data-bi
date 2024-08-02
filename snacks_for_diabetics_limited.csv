@@ -1,0 +1,40 @@
+food,time,Dairy free,Low fat,Low sugar,Vegan,Gluten free,Nut free,Vegetarian,Freezer safe,desc,serves,serving,food_name,food_category,calories,net_carbs
+Apple slices with almond butter,10,True,False,True,True,True,False,True,False,Fresh apple slices paired with creamy almond butter for a nutritious snack.,1,150,Apple slices with almond butter,Fruit and Nut,150.0,15.0
+Greek yogurt with berries,5,False,True,True,False,True,False,True,False,A creamy and protein-rich Greek yogurt topped with fresh berries.,1,200,Greek yogurt with berries,Dairy,200.0,18.0
+Hummus with carrot sticks,10,True,True,True,True,True,True,True,False,Crunchy carrot sticks served with a side of creamy hummus.,1,120,Hummus with carrot sticks,Vegetable and Dip,120.0,10.0
+Mixed nuts,0,True,False,True,True,True,False,True,False,A handful of assorted nuts perfect for a quick and healthy snack.,1,180,Mixed nuts,Nuts,180,6
+Rice cakes with avocado,5,True,True,True,True,True,True,True,False,Light and crispy rice cakes topped with fresh avocado slices.,1,160,Rice cakes with avocado,Grain,160.0,20.0
+Celery sticks with peanut butter,5,True,False,True,True,True,False,True,False,Crunchy celery sticks paired with creamy peanut butter.,1,100,Celery sticks with peanut butter,Vegetable and Nut,100.0,7.0
+Edamame,5,True,True,True,True,True,True,True,False,Steamed edamame sprinkled with sea salt.,1,120,Edamame,Legume,120.0,9.0
+Kale chips,20,True,True,True,True,True,True,True,True,Homemade crispy kale chips for a healthy snack.,1,50,Kale chips,Vegetable,50.0,5.0
+Chia pudding,120,True,True,True,True,True,True,True,True,Creamy chia pudding made with almond milk.,1,200,Chia pudding,Dessert,200.0,20.0
+Hard-boiled eggs,10,False,True,True,False,True,True,True,True,Simple and nutritious hard-boiled eggs.,1,70,Hard-boiled eggs,Protein,70.0,1.0
+Banana with almond butter,5,True,False,True,True,True,False,True,False,A ripe banana paired with almond butter for a quick snack.,1,150,Banana with almond butter,Fruit and Nut,150.0,22.0
+Cottage cheese with pineapple,5,False,True,True,False,True,False,True,False,Protein-rich cottage cheese topped with fresh pineapple.,1,180,Cottage cheese with pineapple,Dairy,180.0,12.0
+Trail mix,1,True,False,True,True,True,False,True,False,A mix of nuts-seeds-and dried fruit.,1,200,Trail mix,Nuts and Fruit,200.0,15.0
+Cucumber slices with hummus,5,True,True,True,True,True,True,True,False,Fresh cucumber slices served with hummus.,1,80,Cucumber slices with hummus,Vegetable and Dip,80.0,5.0
+Pumpkin seeds,0,True,True,True,True,True,True,True,False,Roasted pumpkin seeds with a touch of sea salt.,1,150,Pumpkin seeds,Nuts and Seeds,150.0,5.0
+Yogurt parfait,5,False,True,True,False,True,False,True,False,Layered yogurt with granola and fresh fruit.,1,250,Yogurt parfait,Dairy,250.0,30.0
+Vegetable sticks with tzatziki,5,True,True,True,True,True,True,True,False,Assorted vegetable sticks with creamy tzatziki sauce.,1,100,Vegetable sticks with tzatziki,Vegetable and Dip,100.0,8.0
+Almonds,1,True,False,True,True,True,True,True,False,A handful of raw almonds.,1,160,Almonds,Nuts,160.0,6.0
+Sliced bell peppers,3,True,True,True,True,True,True,True,False,Colorful bell pepper slices-perfect for snacking.,1,50,Sliced bell peppers,Vegetable,50.0,5.0
+Fruit salad,5,True,True,True,True,True,True,True,False,A mix of fresh seasonal fruits.,1,150,Fruit salad,Fruit,150.0,25.0
+Sunflower seeds,0,True,True,True,True,True,True,True,False,Roasted sunflower seeds with a bit of sea salt.,1,150,Sunflower seeds,Nuts and Seeds,150.0,5.0
+"Protein smoothie,5,True,True,True,True,True,True,True,False,A smoothie made with protein powder; almond milk; and fruit.,1,200,Protein smoothie,Drink,200.0,20.0"
+Apple slices with cheese,5,False,True,True,False,True,False,True,False,Fresh apple slices paired with cheese.,1,150,Apple slices with cheese,Fruit and Dairy,150.0,15.0
+Guacamole with tortilla chips,10,True,True,True,True,True,True,True,False,Fresh guacamole served with whole grain tortilla chips.,1,200,Guacamole with tortilla chips,Dip,200.0,18.0
+Olives,1,True,True,True,True,True,True,True,False,A handful of mixed olives- perfect for snacking.,1,50,Olives,Vegetable,50.0,2.0
+Smoothie bowl,10,True,True,True,True,True,True,True,False,A thick smoothie bowl topped with fresh fruits and seeds.,1,300,Smoothie bowl,Drink,300.0,35.0
+Rice cakes with hummus,5,True,True,True,True,True,True,True,False,Light and crispy rice cakes topped with hummus.,1,120,Rice cakes with hummus,Grain and Dip,120.0,15.0
+Carrot sticks with guacamole,5,True,True,True,True,True,True,True,False,Crunchy carrot sticks paired with fresh guacamole.,1,100,Carrot sticks with guacamole,Vegetable and Dip,100.0,8.0
+Avocado toast,5,True,True,True,True,True,True,True,False,Whole grain toast topped with mashed avocado.,1,200,Avocado toast,Grain,200.0,22.0
+Baked chickpeas,30,True,True,True,True,True,True,True,True,Crispy baked chickpeas seasoned with spices.,1,120,Baked chickpeas,Legume,120.0,15.0
+Turkey roll-ups,5,False,True,True,False,True,True,False,False,Sliced turkey rolled around cheese and veggies.,1,100,Turkey roll-ups,Protein,100.0,2.0
+Cottage cheese with berries,5,False,True,True,False,True,False,True,False,Protein-rich cottage cheese topped with fresh berries.,1,180,Cottage cheese with berries,Dairy,180.0,12.0
+Dark chocolate with almonds,1,True,False,False,True,True,True,True,False,A small piece of dark chocolate paired with almonds.,1,200,Dark chocolate with almonds,Dessert,200.0,10.0
+Peanut butter on rice cakes,5,True,False,True,True,True,False,True,False,Light and crispy rice cakes topped with peanut butter.,1,150,Peanut butter on rice cakes,Grain and Nut,150.0,15.0
+Frozen grapes,0,True,True,True,True,True,True,True,True,Frozen grapes for a refreshing and sweet snack.,1,50,Frozen grapes,Fruit,50.0,13.0
+Oatmeal with fruit,5,True,True,True,True,True,True,True,False,Warm oatmeal topped with fresh fruit.,1,200,Oatmeal with fruit,Grain,200.0,30.0
+Seaweed snacks,1,True,True,True,True,True,True,True,False,Light and crispy seaweed snacks.,1,30,Seaweed snacks,Vegetable,30.0,1.0
+Apple chips,10,True,True,True,True,True,True,True,True,Baked apple chips with a touch of cinnamon.,1,100,Apple chips,Fruit,100.0,25.0
+Tomato slices with mozzarella,5,False,True,True,False,True,False,True,False,Fresh tomato slices topped with mozzarella cheese.,1,150,Tomato slices with mozzarella,Vegetable and Dairy,150.0,5.0
